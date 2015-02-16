@@ -8,6 +8,8 @@
 
 <div class="post">{$post->content}</div>
 
+<a n:href="Post:create" n:if="$user->loggedIn">Upravit příspěvek</a>
+
 <h2>Komentáře</h2>
 
 <div class="comments">

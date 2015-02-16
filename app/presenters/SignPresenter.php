@@ -49,16 +49,17 @@ class SignPresenter extends BasePresenter
 			$this->redirect('Homepage:');
 
 		} catch (Nette\Security\AuthenticationException $e) {
-			$form->addError($e->getMessage());
+			//$form->addError($e->getMessage());
+            $form->addError('Nesprávné přihlašovací jméno nebo heslo.');
 		}
 	}
 
 
 	public function actionOut()
 	{
-		$this->getUser()->logout();
-		$this->flashMessage('You have been signed out.');
-		$this->redirect('in');
+        $this->getUser()->logout();
+        $this->flashMessage('Odhlášení bylo úspěšné.');
+        $this->redirect('Homepage:');
 	}
 
 }
